@@ -1,0 +1,37 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // read your own profile
+    match /profiles/{userId} {
+      allow read: if request.auth.uid == userId || request.auth.token.role == 'admin';
+      // allow read: if true;
+      allow write: if request.auth.uid == userId || request.auth.token.role == 'admin';
+    }
+    
+    match /riv_users {
+	    allow read: if true;
+  	  allow write: if true;
+    }
+    
+    match /riv_communities {
+	    allow read: if true;
+  	  allow write: if true;
+    }
+    
+    match /riv_posts {
+	    allow read: if true;
+  	  allow write: if true;
+    }
+    
+    match /riv_comments {
+	    allow read: if true;
+  	  allow write: if true;
+    }
+
+    match /{document=**} {
+      allow read, write: if true;
+          
+    }
+  }
+}

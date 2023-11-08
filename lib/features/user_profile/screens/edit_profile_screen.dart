@@ -4,6 +4,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:reddit_tutorial/core/common/error_text.dart';
 import 'package:reddit_tutorial/core/common/loader.dart';
 import 'package:reddit_tutorial/core/constants/constants.dart';
@@ -21,7 +22,8 @@ class EditProfileScreen extends ConsumerStatefulWidget {
   });
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _EditProfileScreenState();
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _EditProfileScreenState();
 }
 
 class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
@@ -94,7 +96,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
 
     return ref.watch(getUserDataProvider(widget.uid)).when(
           data: (user) => Scaffold(
-            backgroundColor: currentTheme.backgroundColor,
+            backgroundColor: currentTheme.colorScheme.background,
             appBar: AppBar(
               title: const Text('Edit Profile'),
               centerTitle: false,
@@ -123,7 +125,8 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                                     radius: const Radius.circular(10),
                                     dashPattern: const [10, 4],
                                     strokeCap: StrokeCap.round,
-                                    color: currentTheme.textTheme.bodyText2!.color!,
+                                    color: currentTheme
+                                        .textTheme.bodyMedium!.color!,
                                     child: Container(
                                       width: double.infinity,
                                       height: 150,
@@ -134,10 +137,14 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                                           ? Image.memory(bannerWebFile!)
                                           : bannerFile != null
                                               ? Image.file(bannerFile!)
-                                              : user.banner.isEmpty || user.banner == Constants.bannerDefault
+                                              : user.banner.isEmpty ||
+                                                      user.banner ==
+                                                          Constants
+                                                              .bannerDefault
                                                   ? const Center(
                                                       child: Icon(
-                                                        Icons.camera_alt_outlined,
+                                                        Icons
+                                                            .camera_alt_outlined,
                                                         size: 40,
                                                       ),
                                                     )
@@ -152,16 +159,19 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                                     onTap: selectProfileImage,
                                     child: profileWebFile != null
                                         ? CircleAvatar(
-                                            backgroundImage: MemoryImage(profileWebFile!),
+                                            backgroundImage:
+                                                MemoryImage(profileWebFile!),
                                             radius: 32,
                                           )
                                         : profileFile != null
                                             ? CircleAvatar(
-                                                backgroundImage: FileImage(profileFile!),
+                                                backgroundImage:
+                                                    FileImage(profileFile!),
                                                 radius: 32,
                                               )
                                             : CircleAvatar(
-                                                backgroundImage: NetworkImage(user.profilePic),
+                                                backgroundImage: NetworkImage(
+                                                    user.profilePic),
                                                 radius: 32,
                                               ),
                                   ),
@@ -175,7 +185,8 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                               filled: true,
                               hintText: 'Name',
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(color: Colors.blue),
+                                borderSide:
+                                    const BorderSide(color: Colors.blue),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               border: InputBorder.none,

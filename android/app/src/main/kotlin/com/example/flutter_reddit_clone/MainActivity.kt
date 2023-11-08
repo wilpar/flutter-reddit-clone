@@ -1,4 +1,4 @@
-package com.example.reddit_tutorial
+package com.example.flutter_reddit_clone
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -11,7 +11,7 @@ import 'package:reddit_tutorial/theme/pallete.dart';
 import 'package:routemaster/routemaster.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _HomeScreenState();
@@ -80,7 +80,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           ? null
           : CupertinoTabBar(
               activeColor: currentTheme.iconTheme.color,
-              backgroundColor: currentTheme.backgroundColor,
+              backgroundColor: currentTheme.colorScheme.background,
               items: const [
                 BottomNavigationBarItem(
                   icon: Icon(Icons.home),

@@ -31,7 +31,7 @@ class AddPostScreen extends ConsumerWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
-                color: currentTheme.backgroundColor,
+                color: currentTheme.colorScheme.background,
                 elevation: 16,
                 child: Center(
                   child: Icon(
@@ -51,7 +51,7 @@ class AddPostScreen extends ConsumerWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
-                color: currentTheme.backgroundColor,
+                color: currentTheme.colorScheme.background,
                 elevation: 16,
                 child: Center(
                   child: Icon(
@@ -71,7 +71,7 @@ class AddPostScreen extends ConsumerWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
-                color: currentTheme.backgroundColor,
+                color: currentTheme.colorScheme.background,
                 elevation: 16,
                 child: Center(
                   child: Icon(

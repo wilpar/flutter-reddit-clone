@@ -1,6 +1,6 @@
 {
-    "name": "reddit_tutorial",
-    "short_name": "reddit_tutorial",
+    "name": "flutter_reddit_clone",
+    "short_name": "flutter_reddit_clone",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

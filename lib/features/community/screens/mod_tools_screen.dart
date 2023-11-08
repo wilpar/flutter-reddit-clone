@@ -4,9 +4,9 @@ import 'package:routemaster/routemaster.dart';
 class ModToolsScreen extends StatelessWidget {
   final String name;
   const ModToolsScreen({
-    Key? key,
+    super.key,
     required this.name,
-  }) : super(key: key);
+  });
 
   void navigateToModTools(BuildContext context) {
     Routemaster.of(context).push('/edit-community/$name');

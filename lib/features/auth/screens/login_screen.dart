@@ -7,7 +7,7 @@ import 'package:reddit_tutorial/features/auth/controlller/auth_controller.dart';
 import 'package:reddit_tutorial/responsive/responsive.dart';
 
 class LoginScreen extends ConsumerWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   void signInAsGuest(WidgetRef ref, BuildContext context) {
     ref.read(authControllerProvider.notifier).signInAsGuest(context);

@@ -1,7 +1,6 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.reddit_tutorial">
-   <application
-        android:label="reddit_tutorial"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application
+        android:label="flutter_reddit_clone"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
